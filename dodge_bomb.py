@@ -2,6 +2,7 @@ import os
 import sys
 import pygame as pg
 import random
+import time
 
 
 WIDTH, HEIGHT = 1600, 900
@@ -11,6 +12,7 @@ DELTA = {
     pg.K_RIGHT: (+5, 0),
     pg.K_LEFT: (-5, 0),
 }
+
 os.chdir(os.path.dirname(os.path.abspath(__file__)))
 def check_bound(obj_rct:pg.Rect) -> tuple[bool, bool]:
     """
@@ -47,6 +49,7 @@ def main():
                 return
         if kk_rct.colliderect(bd_rct): #こうかとんと爆弾がぶつかったら
             print("Game Over")
+            print(time.sleep(5))
             return
         screen.blit(bg_img, [0, 0]) 
 
